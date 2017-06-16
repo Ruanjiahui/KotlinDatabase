@@ -7,7 +7,7 @@
 
 调用这个库的的链接
 
-    compile 'ruan.database.com:mydatabase:1.0'
+    compile 'ruan.database.com:mydatabase:1.1'
     
     
 
