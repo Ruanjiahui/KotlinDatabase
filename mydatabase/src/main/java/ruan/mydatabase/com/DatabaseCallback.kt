@@ -1,5 +1,7 @@
 package ruan.mydatabase.com
 
+import ruan.mydatabase.com.api.Establish
+
 /**
  * Created by 19820 on 2017/6/15.
  */
@@ -16,5 +18,5 @@ interface DatabaseCallback {
      * *
      * @return 返回一个创建数据的对象
      */
-    fun CreateTable(database: String, table: String, state: Boolean): Any
+    fun CreateTable(database: String, table: String, state: Boolean): Establish
 }

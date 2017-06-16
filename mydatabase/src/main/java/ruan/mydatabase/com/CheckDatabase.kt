@@ -4,6 +4,7 @@ import android.content.Context
 import ruan.mydatabase.com.Operation.GetDatabaseData
 import ruan.mydatabase.com.api.Establish
 import ruan.mydatabase.com.Operation.CreateTable
+import java.util.*
 
 /**
  * Created by 19820 on 2017/6/15.
@@ -84,10 +85,10 @@ class CheckDatabase {
          */
         fun CheckData(context: Context, database: String, tablename: String, databaseCallback: DatabaseCallback) {
             if (!CheckData(context, database, tablename)) {
-                val `object` = databaseCallback.CreateTable(database, tablename, false)
-                //判断如果有数据则自动创建表
-                if (`object` != null)
-                    CreateTable(context, database, tablename, `object`)
+                val obj = databaseCallback.CreateTable(database, tablename, false)
+                //判断如果没有数据则自动创建表
+                if (obj != null)
+                    CreateTable(context, database, tablename, obj)
                 return
             }
             databaseCallback.CreateTable(database, tablename, true)
@@ -107,8 +108,8 @@ class CheckDatabase {
          * 根据数据创建表
          * @param object
          */
-        private fun CreateTable(context: Context, database: String, tablename: String, `object`: Any) {
-            CreateTable.TABLE(context, database, tablename, `object`, "", "")
+        private fun CreateTable(context: Context, database: String, tablename: String, obj: Any) {
+            CreateTable.TABLE(context, database, tablename, obj, "", "")
         }
 
     }

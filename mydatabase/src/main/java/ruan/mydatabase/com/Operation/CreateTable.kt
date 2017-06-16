@@ -82,14 +82,14 @@ class CreateTable {
          * *
          * @param primary_key 主键没有则为空
          */
-        fun TABLE(context: Context, db_name: String, Table_name: String, `object`: Any, auto_key: String, primary_key: String) {
+        fun TABLE(context: Context, db_name: String, Table_name: String, obj: Any, auto_key: String, primary_key: String) {
             val databaseHelper = getInstance(context, db_name)
-            sqLiteDatabase = databaseHelper?.getWritableDatabase()
+            sqLiteDatabase = databaseHelper?.writableDatabase
 
-            key = ClassHandler.ObjectToArraryName(`object`)
+            key = ClassHandler.ObjectToArraryName(obj)
 
             content = ""
-            content = getContent(ClassHandler.ObjectToArraryContent(`object`), key, auto_key, primary_key)
+            content = getContent(ClassHandler.ObjectToArraryContent(obj), key, auto_key, primary_key)
 
             println(content)
 

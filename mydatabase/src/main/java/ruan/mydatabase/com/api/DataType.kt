@@ -1,11 +1,14 @@
 package ruan.mydatabase.com.api
 
 /**
+ * Created by 19820 on 2017/6/16.
+ */
+/**
  * Created by 19820 on 2017/6/15.
  */
 class DataType {
 
-    companion object{
+    companion object {
         val INT = "int"
         val DOUBLE = "double"
         val FLOAT = "float"

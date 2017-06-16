@@ -26,8 +26,8 @@ class BaseUser(var context: Context) : Operation(){
      * 支持对象传参 和 ContentValues
      */
     /************************************************* **********************************************/
-    fun INSERT(database : String , table: String , obj : Object?) : Int?{
-        return insert(context, database, table, MappingClass().ClassToContentValue(obj?.`class`!!, obj))
+    fun INSERT(database : String , table: String , obj : Any) : Int?{
+        return insert(context, database, table, MappingClass().ClassToContentValue(obj.javaClass , obj))
     }
 
     /**

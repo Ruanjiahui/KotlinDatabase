@@ -251,15 +251,18 @@ class ClassHandler {
          * *
          * @return
          */
-        fun ObjectToArraryContent(`object`: Any): ArrayList<String> {
+        fun ObjectToArraryContent(obj: Any): ArrayList<String> {
             val list = ArrayList<String>()
 
-            val loadClass = `object`.javaClass
+//            val loadClass = obj.javaClass
 
-            Log.e("Ruan", loadClass.name)
+//            Log.e("Ruan", loadClass.name)
 
-            val fields = loadClass.fields
-            val declaredFields = loadClass.declaredFields
+            val fields = obj.javaClass.fields
+            val declaredFields = obj.javaClass.declaredFields
+
+            println(Arrays.toString(declaredFields))
+
 
             val fieldList = ClassHandler.FieldsToOne(fields, declaredFields)
 
